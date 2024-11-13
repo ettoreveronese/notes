@@ -1,0 +1,193 @@
+ \documentclass{article}                                          
+\usepackage[a4paper, total={6in, 10in}]{geometry}                 
+\usepackage[T1]{fontenc}                                         
+\usepackage{graphicx}                                            
+\usepackage{amsmath}                                             
+\usepackage{amssymb}                                             
+\usepackage{mathtools}                                           
+\usepackage{enumitem}                                            
+\usepackage{wrapfig}                                             
+\usepackage{hyperref}                                            
+\hypersetup{                                                     
+    colorlinks=true,                                             
+    linkcolor=blue,                                              
+    filecolor=magenta,                                           
+    urlcolor=blue,                                               
+}                     
+
+\title{Appunti di Analisi 1}
+\author{di Ettore Veronese}
+
+\begin{document}
+\maketitle
+
+\section{Continuità}
+\subsection{Classificazione delle discontinuità}
+Sia $A \subset \mathbb{R}$, $f : A \to \mathbb{R}$, $x_0\in A$ è di accumulazione per $A$.
+
+\subsubsection{Discontinuità eliminabile}
+$\lim\limits_{x \to x_0^+} f(x) = l_1 \in \mathbb{R}, \quad \lim\limits_{x \to x_0^-}f(x) = l_2 \in \mathbb{R} \quad$e$ \quad l_1=l_2, \quad f(x_0) \neq l$ \\
+$\Rightarrow x_0$ è una discontinuità eliminabile
+
+\subsubsection{Discontinuità di prima specie}
+$\lim\limits_{x \to x_0^+} f(x) = l_1 \in \mathbb{R}, \quad \lim\limits_{x \to x_0^-} f(x) = l_2 \in \mathbb{R} \quad $e$ \quad L_1 \neq L_2$ \\
+$\Rightarrow x_0$ è una discontinuità di prima specie
+
+\subsubsection{Discontinuità di seconda specie}
+$\lim\limits_{x \to x_0^+} f(x) = \{\infty,\nexists\} \quad $o$ \quad \lim\limits_{x \to x_0^-} f(x) = \{\infty,\nexists\}$ \\
+$\Rightarrow x_0$ è una discontinuità di seconda specie
+
+\subsection{Operazioni con funzioni continue}
+\subsubsection{Teorema sulla continuità} 
+$f,g: A \subset \mathbb{R} \to \mathbb{R}$, $x_0 \in A$ è di accumulazione per $A$, $f,g$ continue in $x_0$\\ 
+$\Rightarrow f+g$ e $f*g$ sono continue in $x_0$\\
+Se inoltre $g(x_0) \neq 0$ allora $f/g$ è continua in $x_0$\\ 
+$\Rightarrow f/g$ è continua in $x_0$
+\bigbreak
+\noindent Dimostrabile coi teoremi sul limite di somma, prodotto e rapporto di funzioni e con la definizione di continuità
+
+\subsubsection{Teorema sulla cotinuità composta}
+$f: A \subset \mathbb{R} \to \mathbb{R}$, $x_0$ è di accumulazione per $A$, $f$ continua in $x_0$\\
+$g:  B \subset \mathbb{R} \to \mathbb{R}$, $t_0$ è di accumulazione per $B$, $g$ continua in $t_0$\\
+Inoltre $g(t_0) = x_0$ $(\lim\limits_{t \to t_0} = x_0$, perchè è continua in $t_0$)\\
+$\Rightarrow f \circ g: B \subset \mathbb{R} \to \mathbb{R}, \quad t \longmapsto f(g(t))$ continua in $t_0$
+\bigbreak
+\noindent Dimostrabile col teorema per sostituzione dei limiti
+
+\subsubsection{Teorema Continuità dell'inversa}
+$f: I \subset \mathbb{R} \to \mathbb{R},$ $I$ intervallo, $f$ strettamente monotona in $I$\\
+$\Rightarrow f^-1: Im(f) \to \mathbb{R}$ è continua in $Im(f)$ 
+
+
+\section{Calcolo differenziale}
+\subsection{Derivabilità}
+\subsubsection{Rapporto incrementale}
+Def: $f: I \subset \mathbb{R} \to \mathbb{R}$, $I$ intervallo, $x_0$ interno ad $I$ $(\Leftrightarrow \exists Ux_0$ intorno di $x_0| Vx_0 \subset I)$\\
+Sia $x \in I$, $x \neq x_0$, si dice rapporto incrementale di $f$ in $x_0$ la quantità 
+\[\scalebox{1.4}{$\frac{f(x)-f(x_0)}{x-x_0}$}\]
+
+\subsubsection{Derivata di una funzione in un punto}
+Def: $f: I \subseteq \mathbb{R} \to \mathbb{R}$, $I$ intervallo, $x_0 \in I$, $x_0$ interno
+\[\scalebox{1.4}{$\Leftrightarrow \lim\limits_{x \to x_0}\frac{f(x)-f(x_0)}{x-x_0}$} = l \in \mathbb{R}\]
+Si può inoltre notare che:\\ 
+- il rapporto incrementale di $f$ in $x_0$ è il coefficente della retta passante per i punti $(x_0, f(x_0)),(x, f(x))$\\
+- $l$ è il coefficente angolare della retta tangente in $(x_0, f(x_0))$\\ 
+- se $l=+\infty(-\infty)$ la tangente è la retta $x = x_0$
+\bigbreak
+\noindent\textbf{Notazione}\\
+$l$ viene indicato come $f'(x_0)$\\
+Notazioni alternative (sconsigliate): $\frac{d}{dx}f(x_0)$, $\frac{df}{dx}f(x_0)$
+
+\subsubsection{Continuità nei punti derivabili}
+$f: I \subseteq \mathbb{R} \to \mathbb{R}$, $I$ intevallo, $x_0 \in I$, $x_0$ interno\\
+$\Rightarrow f$ derivabile in $x_0 \Rightarrow f$ continua in $x_0$
+\bigbreak
+\noindent Dim: $\lim\limits_{x \to x_0}(f(x)-f(x_0)) = \lim\limits_{x \to x_0}\frac{(f(x)-f(x_0))}{x-x_0}*(x-x_0) = 0$
+\bigbreak
+\textbf{NB!} il viceversa è falso, $f$ continua non implica $f$ derivabile!
+
+\subsubsection{Punto angoloso e punto cuspidale}
+$f: I \to \mathbb{R}$, $I$ intervallo, $ x_0 \in I$, $x_0$ interno
+\bigbreak
+\noindent - Se $\lim\limits_{x \to x_0^+}\frac{f(x)-f(x_0)}{x-x_0}=l_1 \in \mathbb{R}, \quad \lim\limits_{x \to x_0^-}\frac{f(x)-f(x_0)}{x-x_0}=l_2 \in \mathbb{R}$\\
+$\Rightarrow x_0$ è detto punto angoloso
+\bigbreak
+\noindent - Se uno tra $\lim\limits_{x \to x_0^+}\frac{f(x)-f(x_0)}{x-x_0}, \quad \lim\limits_{x \to x_0^-}\frac{f(x)-f(x_0)}{x-x_0}$\\
+$\Rightarrow x_0$ è detto punto cuspidale
+
+\subsubsection{Insieme di conformità / derivabilità}
+$f:A \subseteq \mathbb{R} \to \mathbb{R}$\\
+$D(f)^{cont} = \{x \in A | f$ continua in $x \}$\\
+$D(f)^{der} = \{x \in A | f$ è derivabile in $x \}$\\
+Chiaramente $D(f)^{der} \subseteq D(f)^{cont} \subseteq A$
+
+\subsubsection{Funzione derivata prima}
+$f: I \subseteq \mathbb{R} \to \mathbb{R}$, $I$ intervallo, $f$ derivabile in $I$ $((D(f)^{der}=I))$\\
+Definiamo $g: D(f)^{der} \to \mathbb{R}$ e chiamiamo $g$ funzione derivata prima di $f$\\
+\indent $x \mapsto f'(x)$
+
+\subsubsection{Derivate delle funzioni fondamentali}
+\textbf{TODO}
+
+\subsubsection{Derivabilità di somma, prodotto e rapporto}
+\textbf{TODO}
+
+\subsubsection{Teorema del differenziale di Lagrange}
+$f: I \subseteq \mathbb{R} \to \mathbb{R}$, $I$ intervallo, $x_0 \in I$, $x_0$ interno a $I$\\
+$f$ derivabile in $x_0$\\
+$\Rightarrow \exists$ $\omega: I \to \mathbb{R}$ $|$ $\omega$ è continua in $x_0$, $\omega(x_0) = 0$ e $f(x) = f(x_0) + f'(x_0)f(x * x_0) + \omega(x)(x-x_0) \quad \forall x \in I$
+
+\subsubsection{Derivata della funzione composta}
+\textbf{TODO}
+\subsubsection{Derivata dell'inversa}
+$f:I \subseteq \mathbb{R} \to \mathbb{R}$, $I$ intervallo, $x \in I$, $x_0$ interno a $I$\\
+Sia $f$ derivabile in $x_0$, $f'(x_0) \neq 0$ e $f$ strettamente monotona in $I$\\
+$\Rightarrow f^{-1}: Im(f) \to I$ è derivabile in $y_0=f(x_0)$ e $(f^{-1})'(y_0) = \frac{1}{f'(x_0)}$
+\bigbreak
+\noindent Esempi:
+%$f(x)'=(\frac{sinx}{cosx})' = \frac{(cosx)(cosx)+(sinx)(sinx)}{cos^2x} = 1/cos^2x$\\
+%per $x \in (-pi/2, +pi/2)$
+%\bigbreak
+
+\begin{enumerate}
+    \item $g(x) = arccsinx$; $g:[-1,1] \to [-\frac{\pi}{2}, \frac{\pi}{2}]$\\
+        inversa di $f(t) = \sin(t)$; $f: [-\frac{\pi}{2}, \frac{\pi}{2}] \to [-1, 1]$\\
+        $f(t)$ è derivabile, $f(t) = \cos(t) \neq 0 \Leftrightarrow t \in (-\frac{\pi}{2}, \frac{\pi}{2})$\\
+        $\Rightarrow g$ è derivabile in $(-1, 1)$ e $\arcsin(x)' = \frac{1}{\cos(\arcsin(x))}$, $x \in (-1, 1)$\\
+        per $x \in (-1, 1) \Rightarrow \arcsin(x) \in (-\frac{\pi}{2}, \frac{\pi}{2}) \Rightarrow \cos(\arcsin(x)) > 0$\\
+        $\Rightarrow \cos(\arcsin(x)) = \sqrt{(\cos(arcsin(x)))^2} = \sqrt{1-(\sin(\arcsin(x)))^2} = \sqrt{1-x^2}$\\
+        $\Rightarrow \arcsin(x)' = \frac{1}{\sqrt{1-x^2}}$, $x \in (-1, 1)$
+
+    \item TODO
+
+    \item TODO
+
+    \item $g(x) = lg(x), x>0 \quad (f(t)=e^t)$\\
+        $lg(x)' = g'(x) = \frac{1}{e^{(lgx)}} = \frac{1}{x}; \quad x>0$
+
+    \item $g: I \to I$ con $I = [0, +\infty)$ se n è pari, $I = \mathbb{R}$\\
+        se $n$ è dispari $g$ è l'inversa di $f:I \to I$\\
+        $f$ è derivabile in $I$ e $f'(t)=nt^{n-1} \neq 0 Vt \neq 0$\\
+        Quindi g è derivabile per $x \in I$ tale che $x=t^n, f'(t) \neq 0;$\\
+        cioè $g$ è derivabile per $x \in I - \{0\}$\\
+        Inoltre $(x^{1/n})' = g'(x) = \frac{1}{f'(x^{1/n})} = \frac{1}{n(x^{1/n})^{n-1}} = \frac{1}{n} * x^{1/n-1}$ per $x \neq 0$, $x \in I$
+
+    \item $g:(0, +\infty) \to (0, +\infty), g(x)=x^a; a\in \mathbb{R}$\\
+        Osservando che $x^a=e^{a*lg(x)}$ si ha\\
+        $(x^a)' = e^{a*lgx}$ : TODO!
+    \item TODO
+    \item TODO
+
+\end{enumerate}
+
+\subsection{Teorema di Bernoulli - De L'Hopital}
+$a,b \in \mathbb{R}$, $f,g:(a,b) \to \mathbb{R}$, $f,g$ derivabili in $(a,b)$, $g'(x) \neq 0$ $\forall x (a,b)$\\
+Siano $\lim\limits_ {x \to a^+ }f(x) = 0 = \lim\limits_ {x \to a^+}g(x)$ e $\lim\limits_ {x \to a^+}\frac{f'(x)}{g'(x)} = l \in \tilde{\mathbb{R}}$\\
+$\Rightarrow \lim\limits_{x \to a^+} \frac{f(x)}{g(x)} = l$\\
+\textit{*da usare nel caso $[\frac{0}{0}]$ di limiti al finito}
+\bigbreak
+\noindent \textbf{NOTA:} Vale anche per $x \to b^-$, $Df = Dg = (a, b) \backslash \{x_0\}$\\
+\indent con $x \to x_0$, $x \to x_0^+$, $x \to x_0^-$
+\bigbreak
+\noindent Dim: [non richiesta]
+\bigbreak
+\noindent \underline{Osservazioni:}
+\begin{enumerate}
+    \item È un errore comune uguagliare direttamente $\lim\limits_ {x \to a^+} \frac{f(x)}{g(x)}$ con $\lim\limits_ {x \to a^+} \frac{f'(x)}{g'(x)}$ prima di aver verificato che l'ultimo limite esiste (verifica delle ipotesi)
+
+    \item Teorema non applicabile a $\lim\limits_ {x \to 0} \frac{\sin(x)}{x}$. Nelle ipotesi di deve conoscere $\lim\limits_ {x \to 0} \cos(x) = 1$, ma quest'ultimo è mostrato usando $\lim\limits_ {x \to 0} \frac{\sin(x)}{x}$
+\end{enumerate}
+
+\subsubsection{Corollario}
+$f:I \subseteq \mathbb{R} \to \mathbb{R}$, $I$ intervallo, $f$ continua in $I$, $x_0 \in I$ tale che $f$ sia derivabile in $I \backslash \{x_0\}$\\
+Sia inoltre $\lim\limits_ {x \to x_0} f'(x) = l \in \mathbb{R}$\\
+$\Rightarrow \lim\limits_ {x \to x_0} \frac{f(x)-f(x_0)}{x-x_0} = l$
+\bigbreak
+\noindent \textbf{NOTA:} 
+\begin{enumerate}
+    \item se $l \in \mathbb{R}$ la tesi si può riscrivere come "$f$ è derivabile in $x_0$ e $f'(x_0) = l$"
+    \item il corollario vale anche per $x \to x_0^+$; $x \to x_0^-$
+\end{enumerate}
+
+
+\end{document}
