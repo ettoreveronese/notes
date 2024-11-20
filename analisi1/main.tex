@@ -1,5 +1,5 @@
  \documentclass{article}                                          
-\usepackage[a4paper, total={6in, 10in}]{geometry}                 
+\usepackage[a4paper, total={7in, 10in}]{geometry}                 
 \usepackage[T1]{fontenc}                                         
 \usepackage{graphicx}                                            
 \usepackage{amsmath}                                             
@@ -64,11 +64,11 @@ $\Rightarrow f^-1: Im(f) \to \mathbb{R}$ è continua in $Im(f)$
 \subsubsection{Rapporto incrementale}
 Def: $f: I \subset \mathbb{R} \to \mathbb{R}$, $I$ intervallo, $x_0$ interno ad $I$ $(\Leftrightarrow \exists Ux_0$ intorno di $x_0| Vx_0 \subset I)$\\
 Sia $x \in I$, $x \neq x_0$, si dice rapporto incrementale di $f$ in $x_0$ la quantità 
-\[\scalebox{1.4}{$\frac{f(x)-f(x_0)}{x-x_0}$}\]
+\[\scalebox{1}{$\displaystyle\frac{f(x)-f(x_0)}{x-x_0}$}\]
 
 \subsubsection{Derivata di una funzione in un punto}
 Def: $f: I \subseteq \mathbb{R} \to \mathbb{R}$, $I$ intervallo, $x_0 \in I$, $x_0$ interno
-\[\scalebox{1.4}{$\Leftrightarrow \lim\limits_{x \to x_0}\frac{f(x)-f(x_0)}{x-x_0}$} = l \in \mathbb{R}\]
+\[\scalebox{1}{$\displaystyle\Leftrightarrow \lim\limits_{x \to x_0}\frac{f(x)-f(x_0)}{x-x_0}$} = l \in \mathbb{R}\]
 Si può inoltre notare che:\\ 
 - il rapporto incrementale di $f$ in $x_0$ è il coefficente della retta passante per i punti $(x_0, f(x_0)),(x, f(x))$\\
 - $l$ è il coefficente angolare della retta tangente in $(x_0, f(x_0))$\\ 
@@ -160,14 +160,13 @@ $\Rightarrow f^{-1}: Im(f) \to I$ è derivabile in $y_0=f(x_0)$ e $(f^{-1})'(y_0
 
 \end{enumerate}
 
-\subsection{Teorema di Bernoulli - De L'Hopital}
+\subsection{Teoremi di Bernoulli - De L'Hopital}
+\subsubsection{Limite finito, caso 0/0}
 $a,b \in \mathbb{R}$, $f,g:(a,b) \to \mathbb{R}$, $f,g$ derivabili in $(a,b)$, $g'(x) \neq 0$ $\forall x (a,b)$\\
 Siano $\lim\limits_ {x \to a^+ }f(x) = 0 = \lim\limits_ {x \to a^+}g(x)$ e $\lim\limits_ {x \to a^+}\frac{f'(x)}{g'(x)} = l \in \tilde{\mathbb{R}}$\\
-$\Rightarrow \lim\limits_{x \to a^+} \frac{f(x)}{g(x)} = l$\\
-\textit{*da usare nel caso $[\frac{0}{0}]$ di limiti al finito}
+$\Rightarrow \lim\limits_ {x \to a^+} \frac{f(x)}{g(x)} = \lim\limits_ {x \to a^+} \frac{f'(x)}{g'(x)} = l \in \tilde{\mathbb{R}}$
 \bigbreak
-\noindent \textbf{NOTA:} Vale anche per $x \to b^-$, $Df = Dg = (a, b) \backslash \{x_0\}$\\
-\indent con $x \to x_0$, $x \to x_0^+$, $x \to x_0^-$
+\noindent \textbf{Nota:} Risultati analoghi quando $x \to b^-$ e quando $x \to x_0$, $x \to x_0^+$, $x \to x_0^-$ se $f,g$ sono derivabili in $(a,b) \backslash \{x_0\}$ e $g'(x) \neq 0$ per ogni $x \in (a,b) \backslash 0$  
 \bigbreak
 \noindent Dim: [non richiesta]
 \bigbreak
@@ -178,16 +177,43 @@ $\Rightarrow \lim\limits_{x \to a^+} \frac{f(x)}{g(x)} = l$\\
     \item Teorema non applicabile a $\lim\limits_ {x \to 0} \frac{\sin(x)}{x}$. Nelle ipotesi di deve conoscere $\lim\limits_ {x \to 0} \cos(x) = 1$, ma quest'ultimo è mostrato usando $\lim\limits_ {x \to 0} \frac{\sin(x)}{x}$
 \end{enumerate}
 
-\subsubsection{Corollario}
+\noindent \textbf{Corollario}
 $f:I \subseteq \mathbb{R} \to \mathbb{R}$, $I$ intervallo, $f$ continua in $I$, $x_0 \in I$ tale che $f$ sia derivabile in $I \backslash \{x_0\}$\\
-Sia inoltre $\lim\limits_ {x \to x_0} f'(x) = l \in \mathbb{R}$\\
+Sia inoltre $\lim\limits_ {x \to x_0} f'(x) = l \in \tilde{\mathbb{R}}$\\
 $\Rightarrow \lim\limits_ {x \to x_0} \frac{f(x)-f(x_0)}{x-x_0} = l$
 \bigbreak
-\noindent \textbf{NOTA:} 
+\noindent \textbf{Nota:} 
 \begin{enumerate}
     \item se $l \in \mathbb{R}$ la tesi si può riscrivere come "$f$ è derivabile in $x_0$ e $f'(x_0) = l$"
     \item il corollario vale anche per $x \to x_0^+$; $x \to x_0^-$
 \end{enumerate}
 
+\subsubsection{Limite all'infinito, caso 0/0}
+$a \in \mathbb{R}$, $f,g: (a,+\infty) \to \mathbb{R}$, $f,g$ derivabili in $(a,+\infty)$ e $g'(x) \neq 0$ $\forall x \in (a,+\infty)$\\
+Inoltre $\lim\limits_ {x \to \pm\infty} f(x) = \lim\limits_ {x \to \pm\infty} g(x) = 0$ e $\lim\limits_ {x \to \pm\infty} \frac{f'(x)}{g'(x)} \in \tilde{\mathbb{R}}$\\
+$\Rightarrow \lim\limits_ {x \to \pm\infty} \frac{f(x)}{g(x)} = \lim\limits_ {x \to \pm\infty} \frac{f'(x)}{g'(x)} = l \in \tilde{\mathbb{R}}$ 
+
+\subsubsection{Limite finito, caso inf/inf}
+$a \in \mathbb{R}, f,g: (a, b) \to \mathbb{R}$, derivabili in $(a, b)$, $g'(x) \neq 0$ $\forall x \in (a,b)$\\
+Inoltre $\lim\limits_ {x \to a^+} f(x) = \lim\limits_ {x \to a^+} g(x) = \pm\infty$, $\lim\limits_ {x\to a^+} \frac{f'(x)}{g'(x)} = l \in \tilde{\mathbb{R}}$\\
+$\Rightarrow \lim\limits_ {x \to a^+} \frac{f(x)}{g(x)} = \lim\limits_ {x \to a^+} \frac{f'(x)}{g'(x)} = l \in \tilde{\mathbb{R}}$\\
+\textbf{Nota:} Risultati analoghi quando $x \to b^-$ e quando $x \to x_0$, $x \to x_0^+$, $x \to x_0^-$ se $f,g$ sono derivabili in $(a,b) \backslash \{x_0\}$ e $g'(x) \neq 0$ per ogni $x \in (a,b) \backslash 0$ 
+\subsubsection{Limite all'infinito, caso inf/inf}
+$a \in \mathbb{R}$, $f,g: (a, +\infty) \to \mathbb{R}$, $f,g$ derivabili in $(a, +\infty)$, $g'(x) \neq 0$ $\forall x \in (a, +\infty)$\\
+Inoltre $\lim\limits_ {x \to \pm\infty} f(x) = \lim\limits_ {x \to \pm\infty} g(x) = \pm\infty$, $\lim\limits_ {x \to \pm\infty} \frac{f'(x)}{g'(x)} \in \tilde{\mathbb{R}}$\\
+$\Rightarrow \lim\limits_ {x \to \pm \infty}\frac{f(x)}{g(x)} = \lim\limits_ {x \to \pm \infty} \frac{f'(x)}{g'(x)} = l \in \tilde{\mathbb{R}}$
+
+\section{Funzioni infinite e infinitesime}
+\textbf{TODO}
+
+\section{Formula di Taylor}
+\subsection{Formula di Taylor con resto di Peano}
+$n \in \mathbb{N},n >= 1, f: I \subseteq \mathbb{R} \to \mathbb{R}$, $I$ intervallo sia derivabile $n-1$ volte in $I$ e tali funzioni derivate siano continue in $I$. Sia inoltre $x_0 \in I$, $x_0$ interno, ed $\exists f^{(n)}(x_0)$\\
+$\Rightarrow \exists \omega: I \subseteq \mathbb{R} \to \mathbb{R}$ | $\omega$ continua in $x_0$, $\omega (x_0) = 0$ ed inoltre
+\[\scalebox{1}{$\displaystyle f(x) = \sum_ {k=0}^{n} \frac{f^{(k)}(x_0)}{k!} * (x - x_0)^k + \omega(x)*(x-x_0)^n \qquad \forall x \in I$}\]
+- $\displaystyle \sum_ {k=0}^{n} \frac{f^{(k)}(x_0)}{k!} * (x - x_0)^k$  $\to$ Polinomio di Taylor di grado $n$, centrato in $x_0$, per la funzione $f$\\
+- $\omega(x)*(x-x_0)^n \to$ infinitesimo di ordine superiore al grado $n$ 
+\bigbreak 
+\noindent \underline{Dim}: [non richiesta]
 
 \end{document}
